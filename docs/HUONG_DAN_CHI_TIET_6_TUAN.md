@@ -272,3 +272,4 @@ flowchart TD
   1. *Cách phân tích giá trị biên trong Test Case của bạn.*
   2. *Giải thích cấu trúc Page Object Model và cách tổ chức Locator.*
   3. *Chỉ ra điểm nào AI làm sai mà bạn đã tự tay chỉnh sửa lại.*
+

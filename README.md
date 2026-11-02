@@ -59,7 +59,7 @@ flowchart LR
 ```bash
 git clone https://github.com/<tai-khoan-cua-ban>/SOF309_<MÃ_LỚP>_<MSSV>_<HoTen>.git
 ```
-> 💡 **Repo mẫu thực tế của Thầy để tham khảo:** [SOF309_SD21301_PS12345_TranQuangBinh](https://github.com/tqbinh1268/SOF309_SD21301_PS12345_TranQuangBinh.git)
+> 💡 **Repo mẫu thực tế của Thầy để tham khảo:** [https://github.com/tqbinh1268/SOF309_SD21301_PS12345_TranQuangBinh.git](https://github.com/tqbinh1268/SOF309_SD21301_PS12345_TranQuangBinh.git)
 
 ---
 
