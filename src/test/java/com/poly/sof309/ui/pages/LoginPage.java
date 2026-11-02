@@ -47,3 +47,4 @@ public class LoginPage {
         return driver.findElement(lblErrorMessage).getText();
     }
 }
+

@@ -39,3 +39,4 @@ public class SampleControllerTest {
         return "admin".equals(user) && "123".equals(pass);
     }
 }
+
