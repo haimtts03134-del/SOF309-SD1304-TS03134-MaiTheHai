@@ -10,12 +10,20 @@
 
 ```mermaid
 flowchart TD
-    W1["TUẦN 1 (02/11 - 08/11): KHỞI TẠO & RAG ĐẶC TẢ WEB (Y1 & Y2)\n• Bấm 'Use this template', tích hợp Web cá nhân vào src/main\n• Viết SPECIFICATIONS.md, nạp AI RAG sinh Test Plan & Test Case"] --> W2
-    W2["TUẦN 2 (09/11 - 15/11): UNIT TEST CONTROLLER VỚI JUNIT 5 NÂNG CAO (Y3)\n• Viết Unit Test cho Controller\n• Áp dụng Parameterized Test kiểm tra biên Form\n• Áp dụng Exception Testing bắt lỗi nghiệp vụ & Timeout"] --> W3
-    W3["TUẦN 3 (16/11 - 22/11): XÂY DỰNG SELENIUM PAGE OBJECT MODEL CƠ BẢN (Y4 - P1)\n• Thiết kế các class Page Object (LoginPage, RegisterPage, CrudPage)\n• Sử dụng WebDriverWait xử lý bất đồng bộ, tương tác DOM"] --> W4
-    W4["TUẦN 4 (23/11 - 29/11): NÂNG CẤP TESTNG - GROUPS, DATA-DRIVEN & CHỤP ẢNH LỖI (Y4 - P2)\n• Phân nhóm @Test(groups = 'smoke') và dependsOnMethods\n• Sử dụng @DataProvider nạp dữ liệu kiểm thử lặp hàng loạt\n• Bắt sự kiện ITestListener tự động chụp ảnh màn hình khi test fail"] --> W5
-    W5["TUẦN 5 (30/11 - 06/12): TỰ ĐỘNG HÓA CI/CD VỚI GITHUB ACTIONS (Y5)\n• Cấu hình file workflow chạy trên Ubuntu Headless Chrome\n• Chạy riêng nhóm smoke test và upload báo cáo lên Artifacts\n• Ghi chép nhật ký đưa stack trace lỗi cho AI phân tích debug (Y6)"] --> W6
-    W6["TUẦN 6 (07/12 - 10/12): AI CODE REVIEW & CHUẨN BỊ BẢO VỆ (Y6)\n• Đưa code cho AI review và tối ưu mã nguồn (Hoàn thiện đủ ai-logs/)\n• Soạn slide thuyết trình, tổng dượt kịch bản demo và đóng gói nộp bài"]
+    W1["<b>📅 TUẦN 1 (02/11 - 08/11): KHỞI TẠO REPO CÁ NHÂN & ĐẶC TẢ NGHIỆP VỤ BẰNG AI RAG (Y1 & Y2)</b><br>──────────────────────────────────────────────────────────────────────────────────────────────────<br>• Bấm 'Use this template', tích hợp mã nguồn Web cá nhân vào src/main/ và xác nhận chạy mượt local<br>• Viết đặc tả docs/SPECIFICATIONS.md, dùng prompt AI RAG sinh Test Plan & Bộ Test Case chi tiết<br>• 🎯 Sản phẩm nghiệm thu: Link GitHub Repo cá nhân + File TEST_PLAN.md & TEST_CASES.md"]
+    -->
+    W2["<b>📅 TUẦN 2 (09/11 - 15/11): VIẾT UNIT TEST CONTROLLER VỚI JUNIT 5 NÂNG CAO (Y3)</b><br>──────────────────────────────────────────────────────────────────────────────────────────────────<br>• Viết Unit Test cho Controller trong thư mục src/test/java/.../controllers/<br>• Áp dụng Parameterized Test (@ParameterizedTest + @CsvSource) kiểm tra các giá trị biên Form<br>• Áp dụng Exception Testing (assertThrows) bắt lỗi nghiệp vụ trùng lặp dữ liệu & Timeout<br>• 🎯 Sản phẩm nghiệm thu: Lệnh 'mvn test' đạt 100% Pass + File docs/ai-logs/01_test_design_ai.md"]
+    -->
+    W3["<b>📅 TUẦN 3 (16/11 - 22/11): XÂY DỰNG KHUNG SELENIUM PAGE OBJECT MODEL CƠ BẢN (Y4 - P1)</b><br>──────────────────────────────────────────────────────────────────────────────────────────────────<br>• Phân tách kiến trúc POM chuẩn: Thư mục pages/ (quản lý Locator) và tests/ (kịch bản test UI)<br>• Xây dựng các Page Classes: LoginPage.java, RegisterPage.java, ProductPage.java<br>• Sử dụng WebDriverWait xử lý bất đồng bộ khi tương tác DOM, tuyệt đối không dùng Thread.sleep()<br>• 🎯 Sản phẩm nghiệm thu: Kịch bản Selenium mở Chrome chạy tự động mượt mà trên máy local"]
+    -->
+    W4["<b>📅 TUẦN 4 (23/11 - 29/11): NÂNG CẤP TESTNG - GROUPS, DATA-DRIVEN & CHỤP ẢNH LỖI (Y4 - P2)</b><br>──────────────────────────────────────────────────────────────────────────────────────────────────<br>• Phân nhóm kịch bản: Gắn nhãn @Test(groups = 'smoke') và thiết lập ràng buộc dependsOnMethods<br>• Data-Driven Testing: Dùng @DataProvider nạp danh sách tài khoản để tự động kiểm thử lặp<br>• Bắt sự kiện ITestListener: Tự động chụp ảnh màn hình lưu vào screenshots/ mỗi khi test fail<br>• 🎯 Sản phẩm nghiệm thu: File testng.xml hoàn chỉnh + Thư mục ảnh chụp lỗi screenshots/"]
+    -->
+    W5["<b>📅 TUẦN 5 (30/11 - 06/12): TỰ ĐỘNG HÓA CI/CD VỚI GITHUB ACTIONS & AI DEBUG (Y5 & Y6)</b><br>──────────────────────────────────────────────────────────────────────────────────────────────────<br>• Cấu hình file workflow .github/workflows/test.yml chạy tự động khi push hoặc pull request<br>• Chạy kiểm thử ở chế độ Chrome Headless (--headless=new) trên máy chủ ảo Ubuntu<br>• Tự động đóng gói và upload báo cáo kiểm thử & screenshots lên tab Artifacts<br>• 🎯 Sản phẩm nghiệm thu: Tab Actions trên GitHub sáng đèn Xanh (Pass) + File debug log AI"]
+    -->
+    W6["<b>📅 TUẦN 6 (07/12 - 10/12): AI CODE REVIEW, HOÀN THIỆN HỒ SƠ ĐIỂM A & BẢO VỆ (Y6)</b><br>──────────────────────────────────────────────────────────────────────────────────────────────────<br>• Đưa mã nguồn test cho AI review, tối ưu hóa selector và refactor cấu trúc mã nguồn<br>• Hoàn thiện đủ 6 file nhật ký minh chứng AI trong thư mục docs/ai-logs/ để đạt điểm A<br>• Soạn Slide thuyết trình (PowerPoint/PDF), diễn tập kịch bản demo và đóng gói nộp file zip<br>• 🎯 Sản phẩm nghiệm thu: File zip nộp bài + Slide thuyết trình sẵn sàng cho tuần bảo vệ"]
+
+    classDef wideBox text-align:left,fill:#f8fafc,stroke:#4f46e5,stroke-width:2px;
+    class W1,W2,W3,W4,W5,W6 wideBox;
 ```
 
 ---
