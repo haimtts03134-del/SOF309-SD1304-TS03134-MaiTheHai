@@ -24,8 +24,11 @@ flowchart LR
    * **Repository name:** `SOF309_<MÃ_LỚP>_<MSSV>_<HọVàTên>` *(Ví dụ: `SOF309_SD21307_PD12345_NguyenVanA`)*
    * **Visibility:** Chọn **Public** (Bắt buộc để Giảng viên truy cập chấm bài).
 3. Nhấn nút xanh **Create repository** ở đáy biểu mẫu.
-![alt text](image.png)
+
+![alt text](image-1.png)
 ### 🔹 Bước 2: Clone về máy tính & Chạy thử
+![alt text](image-2.png)
+
 Mở Terminal / Git Bash trên máy tính và gõ:
 ```bash
 git clone https://github.com/<tai-khoan-cua-ban>/SOF309_<MÃ_LỚP>_<MSSV>_<HoTen>.git
