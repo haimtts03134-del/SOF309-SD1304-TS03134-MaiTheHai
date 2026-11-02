@@ -31,3 +31,4 @@ jobs:
       with:
         name: test-reports
         path: target/surefire-reports/
+
