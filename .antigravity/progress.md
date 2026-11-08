@@ -22,6 +22,7 @@
   - [x] Cập nhật `docs/TEST_PLAN.md` (Kế hoạch kiểm thử JUnit 5, Selenium POM, CI/CD)
   - [x] Cập nhật `docs/TEST_CASES.md` (Ma trận EP và BVA chi tiết cho Controller và UI)
   - [x] Tạo file nhật ký minh chứng AI `docs/ai-logs/01_test_design_ai.md` (Y6 Điểm A)
+  - [x] Đẩy toàn bộ mã nguồn Tuần 1 lên GitHub an toàn ([SOF309-SD1304-TS03134-MaiTheHai](https://github.com/haimtts03134-del/SOF309-SD1304-TS03134-MaiTheHai)), tuân thủ 100% rule `secret-leak-prevention`
 
 - [ ] **Y3 (Tuần 2): Viết Unit Test Controller với JUnit 5 nâng cao**
 - [ ] **Y4 (Tuần 3 & 4): Xây dựng khung kiểm thử tự động UI (Selenium POM + TestNG)**
