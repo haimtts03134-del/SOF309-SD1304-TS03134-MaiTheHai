@@ -1,6 +1,7 @@
 # THƯ MỤC MINH CHỨNG SỬ DỤNG AI (Y6 - ĐIỂM A)
 
 Sinh viên lưu các file ghi chép quá trình làm việc với AI vào thư mục này. Mỗi file tương ứng với một giai đoạn:
+* `00_project_integration_ai.md`: Tích hợp mã nguồn Web cũ (CafeQR) & khởi tạo cấu trúc dự án (Y1).
 * `01_test_design_ai.md`: Dùng AI + RAG sinh Test Plan & Test Case.
 * `02_junit_script_ai.md`: Dùng AI hỗ trợ viết Unit Test cho Controller.
 * `03_selenium_pom_ai.md`: Dùng Cursor AI / GenAI sinh Page Object Model.

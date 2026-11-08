@@ -1,0 +1,443 @@
+/* 
+   style.css - CSS Dành riêng cho giao diện quản trị Admin QRCoffeePoly
+   Sử dụng bảng màu cà phê sang trọng, hiện đại với các hiệu ứng chuyển đổi mượt mà.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-coffee: #8c6239;
+    --primary-coffee-hover: #6f4e2c;
+    --secondary-gold: #d4a373;
+    --bg-dark: #1e1b18;
+    --bg-light-coffee: #fbf8f3;
+    --text-dark: #3a322d;
+    --text-muted: #8c837c;
+    --sidebar-width: 260px;
+    --card-shadow: 0 10px 30px rgba(140, 98, 57, 0.08);
+    --border-radius: 12px;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-light-coffee);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   1. Giao diện Login (Glassmorphism & Gradient)
+   ========================================================================== */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e1b18 0%, #4a3319 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Các bong bóng màu chuyển động nền sau */
+.login-container::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--secondary-gold) 0%, transparent 70%);
+    top: -50px;
+    left: -50px;
+    opacity: 0.3;
+    animation: float-bg 8s infinite alternate;
+}
+
+.login-container::after {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, var(--primary-coffee) 0%, transparent 70%);
+    bottom: -100px;
+    right: -100px;
+    opacity: 0.3;
+    animation: float-bg 12s infinite alternate-reverse;
+}
+
+@keyframes float-bg {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 30px) scale(1.1); }
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    z-index: 10;
+}
+
+.login-logo {
+    color: var(--primary-coffee);
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-floating > .form-control:focus ~ label {
+    color: var(--primary-coffee);
+}
+
+.form-control:focus {
+    border-color: var(--primary-coffee);
+    box-shadow: 0 0 0 0.25rem rgba(140, 98, 57, 0.25);
+}
+
+.btn-coffee {
+    background-color: var(--primary-coffee);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.btn-coffee:hover {
+    background-color: var(--primary-coffee-hover);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(111, 78, 44, 0.3);
+}
+
+.btn-coffee:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   2. Bố cục trang Dashboard (Sidebar & Header)
+   ========================================================================== */
+#wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: var(--sidebar-width);
+    max-width: var(--sidebar-width);
+    background-color: var(--bg-dark);
+    color: #e6dfd9;
+    transition: all 0.3s;
+    min-height: 100vh;
+    position: fixed;
+    z-index: 99;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid #332d28;
+}
+
+#sidebar .sidebar-header h3 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    color: var(--secondary-gold);
+}
+
+#sidebar ul.components {
+    padding: 25px 0;
+}
+
+#sidebar ul li {
+    padding: 2px 15px;
+}
+
+#sidebar ul li a {
+    padding: 12px 20px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    color: #c4bbb3;
+    border-radius: var(--border-radius);
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+#sidebar ul li a i {
+    margin-right: 15px;
+    font-size: 1.1rem;
+}
+
+#sidebar ul li a:hover, 
+#sidebar ul li.active > a {
+    color: white;
+    background-color: rgba(212, 163, 115, 0.15);
+}
+
+#sidebar ul li.active > a {
+    border-left: 4px solid var(--secondary-gold);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+#content {
+    width: calc(100% - var(--sidebar-width));
+    padding: 40px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    margin-left: var(--sidebar-width);
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: calc(-1 * var(--sidebar-width));
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
+    }
+    #content.active {
+        margin-left: var(--sidebar-width);
+    }
+}
+
+.top-navbar {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 15px 25px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 30px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid var(--secondary-gold);
+}
+
+/* ==========================================================================
+   3. Các thành phần Dashboard (Thẻ thống kê & Bảng dữ liệu)
+   ========================================================================== */
+.stat-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(140, 98, 57, 0.15);
+}
+
+.stat-icon {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 3.5rem;
+    color: rgba(212, 163, 115, 0.15);
+}
+
+.stat-title {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* Custom Table */
+.custom-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+    border: none;
+    margin-bottom: 30px;
+}
+
+.card-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f6f3ee;
+    padding-bottom: 15px;
+}
+
+.custom-card-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.custom-table {
+    margin-bottom: 0;
+}
+
+.custom-table thead th {
+    background-color: #fcf9f5;
+    color: var(--text-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    padding: 15px;
+    border-bottom: 1px solid #f0e9df;
+}
+
+.custom-table tbody td {
+    padding: 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f6f3ee;
+    color: #594d45;
+}
+
+.custom-table tbody tr:hover td {
+    background-color: rgba(214, 163, 115, 0.03);
+}
+
+.avatar-table {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+/* Badge Trạng thái */
+.badge-status {
+    font-weight: 600;
+    padding: 5px 13px;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    display: inline-block;
+}
+
+.status-dahuy {
+    background-color: rgba(220, 53, 69, 0.15) !important;
+    color: #dc3545 !important;
+    border: 1px solid rgba(220, 53, 69, 0.3) !important;
+}
+
+.status-dathanhtoan {
+    background-color: rgba(25, 135, 84, 0.15) !important;
+    color: #198754 !important;
+    border: 1px solid rgba(25, 135, 84, 0.3) !important;
+}
+
+.status-chothanhtoan {
+    background-color: rgba(255, 193, 7, 0.15) !important;
+    color: #b58105 !important;
+    border: 1px solid rgba(255, 193, 7, 0.3) !important;
+}
+
+.status-dangchebien {
+    background-color: rgba(13, 202, 240, 0.15) !important;
+    color: #0dcaf0 !important;
+    border: 1px solid rgba(13, 202, 240, 0.3) !important;
+}
+
+.status-dagiao {
+    background-color: rgba(111, 66, 193, 0.15) !important;
+    color: #6f42c1 !important;
+    border: 1px solid rgba(111, 66, 193, 0.3) !important;
+}
+
+.badge-active {
+    background-color: rgba(25, 135, 84, 0.1);
+    color: #198754;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 30px;
+}
+
+.badge-inactive {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 30px;
+}
+
+/* ==========================================================================
+   4. Biểu mẫu CRUD
+   ========================================================================== */
+.form-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid #f3ece4;
+    position: sticky;
+    top: 40px;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.form-select, .form-control {
+    border-radius: 8px;
+    border: 1px solid #dcd3c9;
+    padding: 10px 15px;
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: var(--primary-coffee);
+    box-shadow: 0 0 0 0.25rem rgba(140, 98, 57, 0.15);
+}
+
+/* Hiệu ứng mượt mà nút thao tác trong bảng */
+.action-btn {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    margin: 0 2px;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+}

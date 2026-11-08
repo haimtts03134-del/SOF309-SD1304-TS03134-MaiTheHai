@@ -20,6 +20,16 @@ bin/
 *.class
 *.jar
 *.war
+src/main/webapp/WEB-INF/classes/
+
+# Database & Sensitive Data (Rule secret-leak-prevention)
+*.sql
+*.db
+*.sqlite
+*.dump
+*.bak
+*.csv
+*.jsonl
 
 # Private / Lecturer materials (Không đưa lên Git của SV)
 *.pdf

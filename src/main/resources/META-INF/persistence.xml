@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0"
+             xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+    <!-- Cấu hình Persistence Unit: CoffeeShopPU -->
+    <persistence-unit name="CoffeeShopPU" transaction-type="RESOURCE_LOCAL">
+        <!-- Provider của Hibernate -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>entity.Attendance</class>
+        <class>entity.User</class>
+        <class>entity.Role</class>
+        <class>entity.Drink</class>
+        <class>entity.Category</class>
+        <class>entity.Customer</class>
+        <class>entity.Order</class>
+        <class>entity.OrderDetail</class>
+        <class>entity.Table</class>
+
+        <properties>
+            <!-- Thông tin kết nối Supabase PostgreSQL Pooler (Hỗ trợ IPv4 & Transaction Pooler) -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres?sslmode=require&amp;prepareThreshold=0" />
+            <property name="jakarta.persistence.jdbc.user" value="postgres.mbtxuxrgdqqmgulbkqwi" />
+            <property name="jakarta.persistence.jdbc.password" value="${DB_PASSWORD}" />
+
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+            <property name="hibernate.connection.url" value="jdbc:postgresql://aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres?sslmode=require&amp;prepareThreshold=0" />
+            <property name="hibernate.connection.username" value="postgres.mbtxuxrgdqqmgulbkqwi" />
+            <property name="hibernate.connection.password" value="${DB_PASSWORD}" />
+
+            <!-- Cấu hình Schema & Dialect cho PostgreSQL -->
+            <property name="hibernate.default_schema" value="public" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="none" />
+
+            <!-- Cấu hình Connection Pool HikariCP -->
+            <property name="hibernate.connection.provider_class" value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider" />
+            <property name="hibernate.hikari.minimumIdle" value="2" />
+            <property name="hibernate.hikari.maximumPoolSize" value="10" />
+            <property name="hibernate.hikari.idleTimeout" value="30000" />
+            <property name="hibernate.hikari.connectionTimeout" value="20000" />
+            <property name="hibernate.hikari.maxLifetime" value="1800000" />
+        </properties>
+    </persistence-unit>
+</persistence>
